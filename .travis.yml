@@ -8,7 +8,7 @@ before_install:
   - ssh-add ./deploy_rsa
   - ssh -i ./deploy_rsa lws@www.learnwebservices.com pwd
 deploy:
-  - provider:script
-    script: ./deploy.sh
-    on:
-      branch: master
+  provider: script
+  script: bash ./deploy.sh
+  on:
+    branch: master
