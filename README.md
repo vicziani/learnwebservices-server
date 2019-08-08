@@ -1,4 +1,6 @@
-# Repository for learnwebservices.com site
+# Repository for learnwebservices.com server application
+
+[![Build Status](https://api.travis-ci.com/vicziani/learnwebservices-server.svg?branch=master)](https://travis-ci.com/vicziani/learnwebservices-server)
 
 This repository contains the source of the Spring Boot server application 
 that serves the web services on http://learnwebservices.com site.
