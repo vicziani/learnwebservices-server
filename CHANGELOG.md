@@ -5,6 +5,8 @@
 - Remove `System.out`
 - Upgrade to Java 12
 - Introduce Project Lombok
+- JUnit 5
+- 3rd party libraries version updates
 
 ## [1.0.0]
 
