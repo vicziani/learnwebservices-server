@@ -1,24 +1,20 @@
 package com.learnwebservices.services.hello;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 
+@Data
+@XmlAccessorType(XmlAccessType.FIELD)
+@NoArgsConstructor
+@AllArgsConstructor
 public class HelloRequest {
 
+    @XmlElement(name = "Name", required = true)
     private String name;
 
-    public HelloRequest() {
-    }
-
-    public HelloRequest(String name) {
-        this.name = name;
-    }
-
-    @XmlElement(name = "Name", required = true)
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
 }

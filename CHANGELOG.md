@@ -1,5 +1,11 @@
 # Changelog
 
+## [1.0.1]
+
+- Remove `System.out`
+- Upgrade to Java 12
+- Introduce Project Lombok
+
 ## [1.0.0]
 
 - Initial release
