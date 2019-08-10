@@ -12,7 +12,7 @@ public class FaultInterceptor extends AbstractSoapInterceptor {
     }
 
     @Override
-    public void handleMessage(SoapMessage message) throws Fault {
+    public void handleMessage(SoapMessage message) {
         Exception exception = message.getContent(Exception.class);
         if (exception instanceof Fault && isWrongNumber(exception)) {
             ((Fault) exception).setMessage(exception.getMessage() +
