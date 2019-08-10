@@ -12,7 +12,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 @ExtendWith(SpringExtension.class)
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
-public class HelloIntegrationTest {
+public class HelloIT {
 
     @LocalServerPort
     private int port;

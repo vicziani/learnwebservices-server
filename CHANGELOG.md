@@ -3,6 +3,7 @@
 ## [1.0.3]
 
 - Payload logging
+- Separate unit and integration tests
 
 ## [1.0.2]
 
