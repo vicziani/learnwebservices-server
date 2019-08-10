@@ -4,6 +4,7 @@ import com.learnwebservices.services.FaultInterceptor;
 import com.learnwebservices.services.hello.HelloEndpoint;
 import com.learnwebservices.services.tempconverter.TempConverterEndpoint;
 import org.apache.cxf.Bus;
+import org.apache.cxf.ext.logging.LoggingFeature;
 import org.apache.cxf.jaxws.EndpointImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
@@ -12,6 +13,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.env.Environment;
 
+import javax.annotation.PostConstruct;
 import javax.xml.ws.Endpoint;
 import java.util.List;
 
@@ -28,6 +30,13 @@ public class LearnWebservicesApp {
 
     @Autowired
     private Environment environment;
+
+    @PostConstruct
+    public void setupBus() {
+        LoggingFeature loggingFeature = new LoggingFeature();
+        loggingFeature.setPrettyLogging(true);
+        bus.setFeatures(List.of(loggingFeature));
+    }
 
     @Bean
     public Endpoint endpoint(HelloEndpoint helloEndpoint) {

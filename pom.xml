@@ -19,6 +19,7 @@
         <java.version>12</java.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <cxf.version>3.3.2</cxf.version>
     </properties>
 
     <dependencies>
@@ -35,7 +36,13 @@
         <dependency>
             <groupId>org.apache.cxf</groupId>
             <artifactId>cxf-spring-boot-starter-jaxws</artifactId>
-            <version>3.3.2</version>
+            <version>${cxf.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.cxf</groupId>
+            <artifactId>cxf-rt-features-logging</artifactId>
+            <version>${cxf.version}</version>
         </dependency>
 
         <!-- https://stackoverflow.com/questions/16212246/what-is-difference-javax-jws-and-javax-xml-ws -->
