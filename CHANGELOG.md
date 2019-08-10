@@ -1,5 +1,9 @@
 # Changelog
 
+## [1.0.2]
+
+- Spring Boot Actuator with `info` and `health` endpoints (with Maven build info)
+
 ## [1.0.1]
 
 - Remove `System.out`
