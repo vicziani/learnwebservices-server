@@ -1,5 +1,10 @@
 # Changelog
 
+## [1.0.4]
+
+- Application generates correct WSDL files
+- TempConverter service doesn't use embedded tags
+
 ## [1.0.3]
 
 - Payload logging

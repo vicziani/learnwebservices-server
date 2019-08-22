@@ -2,7 +2,11 @@ package com.learnwebservices.services.tempconverter;
 
 import org.springframework.stereotype.Service;
 
+import javax.jws.WebService;
+
 @Service
+@WebService(targetNamespace = "http://learnwebservices.com/services/tempconverter",
+        serviceName = "TempConverterEndpointService", portName = "TempConverterEndpointPort")
 public class DelegatingTempConverterEndpoint implements TempConverterEndpoint {
 
     private TempConverterService tempConverterService;

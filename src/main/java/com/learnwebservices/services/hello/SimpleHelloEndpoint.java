@@ -5,12 +5,15 @@ import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
+import javax.jws.WebService;
 import javax.xml.ws.WebServiceContext;
 import javax.xml.ws.handler.MessageContext;
 import java.util.List;
 import java.util.Map;
 
 @Service
+@WebService(targetNamespace = "http://learnwebservices.com/services/hello",
+        serviceName = "HelloEndpointService", portName = "HelloEndpointPort")
 public class SimpleHelloEndpoint implements HelloEndpoint {
 
     private Logger logger = LoggerFactory.getLogger(this.getClass());
