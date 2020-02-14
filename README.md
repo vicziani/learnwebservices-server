@@ -17,4 +17,4 @@ This site was developed by István Viczián, the author of the http://jtechlog.h
 
 The source code of the SOAP server is licensed under MIT License.
 
-See [LICENSE](LICENSE) files for details.
+See [LICENCE](LICENCE) files for details.
