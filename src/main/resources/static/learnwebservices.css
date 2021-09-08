@@ -1,0 +1,31 @@
+body {
+    color: #212529;
+}
+
+a {
+    color: #f05f40;
+    text-decoration: none;
+}
+
+input {
+    color: #f05f40;
+    border: 1px solid #f05f40;
+    border-radius: .25rem;
+    padding: .375rem .75rem;
+    margin: 0 .75rem .375rem  0;
+}
+
+input:focus {
+    border-color: #f05f40;
+    box-shadow: 0 0 0 .2rem #fbd4cc;
+    outline-width: 0;
+}
+
+button {
+    color: #fff;
+    border: 1px solid transparent;
+    background-color: #f05f40;
+    border-color: #f05f40;
+    border-radius: .25rem;
+    padding: .375rem .75rem;
+}

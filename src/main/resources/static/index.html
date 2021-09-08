@@ -2,22 +2,33 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>JavaScript client</title>
-    <style>
-        .hidden {
-            display: none;
-        }
-
-    </style>
+    <title>Learn Web Services Server Application</title>
+    <link rel="stylesheet" href="learnwebservices.css">
 </head>
 <body>
-<span id="online-badge" class="hidden">Online</span><span id="offline-badge" class="hidden">Offline</span>
+
+<h1>Learn Web Services Server Application</h1>
+
+<p>This application serves the web service on the <a href="https://www.learnwebservices.com/">https://www.learnwebservices.com</a>
+    site.</p>
+
+<p>It provides some free, public, SOAP web services examples for learning, prototyping, teaching, testing, demonstrating tools, libraries or technologies.</p>
+
+<p>The list of the services is available <a href="services">here</a>.</p>
+
 <form id="hello-form">
     <input id="hello-name-input"/>
     <input id="hello-message-input" readonly="readonly"/>
-    <input type="submit" class="btn btn-primary" value="Say Hello!"/>
+    <button>Say Hello!</button>
 </form>
 
+<p>Created by István Viczián - <a href="http://jtechlog.hu">http://jtechlog.hu</a></p>
+
+<p>The source codes of the SOAP server example are licensed under <a href="https://github.com/vicziani/learnwebservices-server/blob/master/LICENCE">MIT</a> License.</p>
+
+<p>The textual content of the site is licensed under <a href="https://creativecommons.org/licenses/by-sa/4.0">Creative Commons Attribution-ShareAlike 4.0 International License</a>.</p>
+
 <script src="learnwebservices.js"></script>
+
 </body>
 </html>
