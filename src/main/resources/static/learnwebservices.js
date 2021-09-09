@@ -45,6 +45,9 @@ function callWebservice(name, onSuccess, onError) {
 
   fetch(url, fetchData)
     .then(function(response) {
+      if (response.status != 200) {
+        throw new Error(`Status: ${response.status}`);
+      }
       return response.text();
     })
     .then(function(xml) {
