@@ -3,7 +3,7 @@ window.onload = function() {
 }
 
 function registerOnSubmit() {
-  var form = document.getElementById("hello-form");
+  const form = document.getElementById("hello-form");
   form.onsubmit = submitHandler;
 }
 
@@ -26,8 +26,8 @@ function writeMessage(message) {
 }
 
 function callWebservice(name, onSuccess, onError) {
-  var url = "services/hello";
-  var request = `<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
+  const url = "services/hello";
+  const request = `<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
      <soapenv:Header/>
      <soapenv:Body>
         <SayHello xmlns="http://learnwebservices.com/services/hello">
@@ -38,8 +38,8 @@ function callWebservice(name, onSuccess, onError) {
      </soapenv:Body>
   </soapenv:Envelope>`;
 
-  var fetchData = {
-     method: 'POST',
+  const fetchData = {
+     method: "POST",
      body: request
   };
 
@@ -51,8 +51,8 @@ function callWebservice(name, onSuccess, onError) {
       return response.text();
     })
     .then(function(xml) {
-        var xmlDoc = new DOMParser().parseFromString(xml, "text/xml");
-        var message = xmlDoc.getElementsByTagNameNS("http://learnwebservices.com/services/hello", "Message")[0].textContent;
+        const xmlDoc = new DOMParser().parseFromString(xml, "text/xml");
+        const message = xmlDoc.getElementsByTagNameNS("http://learnwebservices.com/services/hello", "Message")[0].textContent;
         onSuccess(message);
     })
     .catch(function(error) {
@@ -63,11 +63,11 @@ function callWebservice(name, onSuccess, onError) {
 function escapeXml(unsafe) {
   return unsafe.replace(/[<>&'"]/g, function (c) {
       switch (c) {
-          case '<': return '&lt;';
-          case '>': return '&gt;';
-          case '&': return '&amp;';
-          case '\'': return '&apos;';
-          case '"': return '&quot;';
+          case "<": return "&lt;";
+          case ">": return "&gt;";
+          case "&": return "&amp;";
+          case "'": return "&apos;";
+          case '"': return "&quot;";
       }
   });
 }
