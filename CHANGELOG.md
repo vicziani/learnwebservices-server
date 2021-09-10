@@ -4,6 +4,10 @@
 
 - Application generates correct WSDL files
 - TempConverter service doesn't use embedded tags
+- Dockerize
+- Build with GitHub actions
+- CORS support
+- Downgrade to latest LTS Java version
 
 ## [1.0.3]
 
