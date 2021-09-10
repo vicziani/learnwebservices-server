@@ -41,5 +41,5 @@ jobs:
         file: ./Dockerfile
         push: true
         tags: 
-          - ${{ secrets.DOCKER_HUB_USERNAME }}/lwsapp:latest
-          - ${{ secrets.DOCKER_HUB_USERNAME }}/lwsapp:${{ steps.get_version.outputs.version }}
+        - ${{ secrets.DOCKER_HUB_USERNAME }}/lwsapp:latest
+        - ${{ secrets.DOCKER_HUB_USERNAME }}/lwsapp:${{ steps.get_version.outputs.version }}
