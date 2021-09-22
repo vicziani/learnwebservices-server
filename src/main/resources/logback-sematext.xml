@@ -10,7 +10,7 @@
         <throwableExcluded>true</throwableExcluded>
         <suffixPattern>${SEMATEXT_ID}:@cee: {"logger": "%logger", "level":"%level", "thread":"%thread",
             "message":"%replace(%message){'\"', '\''}", "exception":"%replace(%ex){'\"', '\''}",
-            "remote-ip": "%X{remote-ip}"
+            "remote-ip": "%X{remote-ip}",
             "@timestamp":"%date{"yyyy-MM-dd'T'HH:mm:ss,SSSXXX", UTC}"}
         </suffixPattern>
     </appender>
