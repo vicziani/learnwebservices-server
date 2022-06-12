@@ -12,16 +12,16 @@ import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
 @ExtendWith(MockitoExtension.class)
-public class TempConverterEndpointTest {
+class TempConverterEndpointTest {
 
     @Mock
-    private TempConverterService tempConverterService;
+    TempConverterService tempConverterService;
 
     @InjectMocks
-    private DelegatingTempConverterEndpoint tempConverterEndpoint;
+    DelegatingTempConverterEndpoint tempConverterEndpoint;
 
     @Test
-    public void testConvertToFahrenheit() {
+    void testConvertToFahrenheit() {
         when(tempConverterService.convertFahrenheitToCelsius(anyDouble())).thenReturn(-17.778);
 
         var response =
@@ -31,7 +31,7 @@ public class TempConverterEndpointTest {
     }
 
     @Test
-    public void testConvertToCelsius() {
+    void testConvertToCelsius() {
         when(tempConverterService.convertCelsiusToFahrenheit(anyDouble())).thenReturn(32.0);
 
         CelsiusToFahrenheitResponse response =

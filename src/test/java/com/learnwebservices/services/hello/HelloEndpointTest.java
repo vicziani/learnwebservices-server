@@ -4,10 +4,10 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public class HelloEndpointTest {
+class HelloEndpointTest {
 
     @Test
-    public void testSayHello() {
+    void testSayHello() {
         var helloEndpoint = new SimpleHelloEndpoint();
         var response = helloEndpoint.sayHello(new HelloRequest("John Doe"));
         assertEquals("Hello John Doe!", response.getMessage());

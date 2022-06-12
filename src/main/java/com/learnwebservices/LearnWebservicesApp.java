@@ -48,7 +48,6 @@ public class LearnWebservicesApp {
     @Bean
     public Endpoint endpoint(HelloEndpoint helloEndpoint) {
         EndpointImpl endpoint = new EndpointImpl(bus, helloEndpoint);
-        endpoint.setPublishedEndpointUrl(environment.getProperty("publish.url.prefix") + "/services/hello");
         endpoint.publish("/hello");
         return endpoint;
     }
@@ -57,7 +56,6 @@ public class LearnWebservicesApp {
     public Endpoint publishedTempConverterEndpoint(TempConverterEndpoint tempConverterEndpoint) {
         EndpointImpl endpoint = new EndpointImpl(bus, tempConverterEndpoint);
         endpoint.setOutFaultInterceptors(List.of(new FaultInterceptor()));
-        endpoint.setPublishedEndpointUrl(environment.getProperty("publish.url.prefix") + "/services/tempconverter");
         endpoint.publish("/tempconverter");
         return endpoint;
     }
