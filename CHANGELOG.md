@@ -1,5 +1,15 @@
 # Changelog
 
+## [2.0.0]
+
+- Move to Amazon Web Services
+- Simplify WSDL and SOAP messages in `hello` web service, `SOAPBinding.ParameterStyle.BARE` in `HelloEndpoint`
+- Remove `setPublishedEndpointUrl`, CXF detects it automatically
+- Remove public and private modifiers from test classes
+- Remove `SpringExtension` from test classes, `@SpringBootTest` is enough
+- New test with WebTestClient
+- Obvious text in `index.html`
+
 ## [1.0.4]
 
 - Application generates correct WSDL files
@@ -8,6 +18,9 @@
 - Build with GitHub actions
 - CORS support
 - Downgrade to latest LTS Java version
+- Log to Sematext
+- Remote ip appears in the log with SLF4J MDC  
+- Filter log messages by remote ip 
 
 ## [1.0.3]
 
