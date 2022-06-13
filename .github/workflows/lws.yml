@@ -59,5 +59,5 @@ jobs:
         --version-label "ver-${{ steps.get_version.outputs.version }}-${{github.run_number}}" \
         --description "commit-sha-${{ github.sha }}"
 
-     - name: Deploy new ElasticBeanstalk Application Version
-        run: aws elasticbeanstalk update-environment --environment-name Learnwebservices-env --version-label "ver-${{ steps.get_version.outputs.version }}-${{github.run_number}}"
+    - name: Deploy new ElasticBeanstalk Application Version
+      run: aws elasticbeanstalk update-environment --environment-name Learnwebservices-env --version-label "ver-${{ steps.get_version.outputs.version }}-${{github.run_number}}"
