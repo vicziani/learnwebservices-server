@@ -50,7 +50,7 @@ jobs:
         aws-secret-access-key: ${{ secrets.SECRET_ACCESS_KEY }}
         aws-region: "eu-central-1"
     - name: Upload package to S3 bucket
-      run: aws s3 cp lwsapp.jar s3://learnwebservices-deploy/lwsapp-${{ steps.get_version.outputs.version }}-${{github.run_number}}.jar
+      run: aws s3 cp target/lwsapp.jar s3://learnwebservices-deploy/lwsapp-${{ steps.get_version.outputs.version }}-${{github.run_number}}.jar
     - name: Create new ElasticBeanstalk Application Version
       run: |
         aws elasticbeanstalk create-application-version \
