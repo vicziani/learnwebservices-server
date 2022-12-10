@@ -1,5 +1,9 @@
 # Changelog
 
+## [2.0.1]
+
+- Multi-platform image (`linux/amd64`, `linux/arm64`)
+
 ## [2.0.0]
 
 - Move to Amazon Web Services
