@@ -3,6 +3,7 @@
 ## [3.0.0]
 
 - Upgrade to Spring 3.1.0 and CXF 4.0.1
+- CXF handles the `X-Forwarded-*` headers during WSDL generation
 
 ## [2.0.1]
 
