@@ -10,8 +10,10 @@ import org.apache.cxf.jaxws.EndpointImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.context.event.ApplicationStartedEvent;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.boot.web.servlet.FilterRegistrationBean;
+import org.springframework.context.ApplicationListener;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.env.Environment;
@@ -19,9 +21,9 @@ import org.springframework.web.cors.CorsConfiguration;
 import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 import org.springframework.web.filter.CorsFilter;
 
-import javax.annotation.PostConstruct;
-import javax.xml.ws.Endpoint;
+import jakarta.xml.ws.Endpoint;
 import java.util.List;
+
 
 @SpringBootApplication
 @Configuration
@@ -38,8 +40,12 @@ public class LearnWebservicesApp {
     @Autowired
     private Environment environment;
 
-    @PostConstruct
-    public void setupBus() {
+    @Bean
+    public ApplicationListener<ApplicationStartedEvent> initBus() {
+        return this::setupBus;
+    }
+
+    public void setupBus(ApplicationStartedEvent event) {
         LoggingFeature loggingFeature = new LoggingFeature();
         loggingFeature.setPrettyLogging(true);
         bus.setFeatures(List.of(loggingFeature));
@@ -71,6 +77,5 @@ public class LearnWebservicesApp {
         bean.setOrder(0);
         return bean;
     }
-
 
 }

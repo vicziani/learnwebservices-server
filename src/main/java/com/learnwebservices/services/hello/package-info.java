@@ -2,5 +2,5 @@
         elementFormDefault= XmlNsForm.QUALIFIED)
 package com.learnwebservices.services.hello;
 
-import javax.xml.bind.annotation.XmlNsForm;
-import javax.xml.bind.annotation.XmlSchema;
+import jakarta.xml.bind.annotation.XmlNsForm;
+import jakarta.xml.bind.annotation.XmlSchema;

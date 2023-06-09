@@ -2,7 +2,7 @@ package com.learnwebservices.services.tempconverter;
 
 import org.springframework.stereotype.Service;
 
-import javax.jws.WebService;
+import jakarta.jws.WebService;
 
 @Service
 @WebService(targetNamespace = "http://learnwebservices.com/services/tempconverter",
