@@ -14,22 +14,26 @@ class HelloWebClientIT {
 
     @Test
     void testHello() {
-        String request = "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:hel=\"http://learnwebservices.com/services/hello\">\n" +
-                "   <soapenv:Header/>\n" +
-                "   <soapenv:Body>\n" +
-                "      <hel:HelloRequest>\n" +
-                "         <hel:Name>John Doe</hel:Name>\n" +
-                "      </hel:HelloRequest>\n" +
-                "   </soapenv:Body>\n" +
-                "</soapenv:Envelope>";
+        String request = """
+                <soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:hel="http://learnwebservices.com/services/hello">
+                   <soapenv:Header/>
+                   <soapenv:Body>
+                      <hel:HelloRequest>
+                         <hel:Name>John Doe</hel:Name>
+                      </hel:HelloRequest>
+                   </soapenv:Body>
+                </soapenv:Envelope>
+                """;
 
-        String response = "<soap:Envelope xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\">\n" +
-                "   <soap:Body>\n" +
-                "      <HelloResponse xmlns=\"http://learnwebservices.com/services/hello\">\n" +
-                "         <Message>Hello John Doe!</Message>\n" +
-                "      </HelloResponse>\n" +
-                "   </soap:Body>\n" +
-                "</soap:Envelope>";
+        String response = """
+                <soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+                   <soap:Body>
+                      <HelloResponse xmlns="http://learnwebservices.com/services/hello">
+                         <Message>Hello John Doe!</Message>
+                      </HelloResponse>
+                   </soap:Body>
+                </soap:Envelope>
+                """;
 
         webClient
                 .post()
