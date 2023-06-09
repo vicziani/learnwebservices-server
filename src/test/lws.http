@@ -1,0 +1,17 @@
+### Sample request
+POST http://localhost:8080/services/hello
+
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:hel="http://learnwebservices.com/services/hello">
+                   <soapenv:Header/>
+                   <soapenv:Body>
+                      <hel:HelloRequest>
+                         <hel:Name>John Doe</hel:Name>
+                      </hel:HelloRequest>
+                   </soapenv:Body>
+                </soapenv:Envelope>
+
+### Test X-Forwarded headers handling
+
+GET http://localhost:8080/services/hello?wsdl
+X-Forwarded-Host: test.learnwebservices.com
+X-Forwarded-Proto: https
