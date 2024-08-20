@@ -1,5 +1,11 @@
 # Changelog
 
+## [3.0.1]
+
+- Use constructor injection in `LearnWebservicesApp`
+- Register `CorsFilter` directly without `FilterRegistrationBean`
+- Use `ForwardedHeaderFilter` instead of configuring `ServletRegistrationBean`
+
 ## [3.0.0]
 
 - Upgrade to Spring 3.1.0, Java 17 and CXF 4.0.1
