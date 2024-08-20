@@ -5,6 +5,7 @@
 - Use constructor injection in `LearnWebservicesApp`
 - Register `CorsFilter` directly without `FilterRegistrationBean`
 - Use `ForwardedHeaderFilter` instead of configuring `ServletRegistrationBean`
+- Remove warnings from `Dockerfile`
 
 ## [3.0.0]
 
