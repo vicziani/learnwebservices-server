@@ -23,6 +23,7 @@ public class CxfResourceHints implements RuntimeHintsRegistrar {
         hints.reflection().registerType(SchemaImpl.class, MemberCategory.INVOKE_DECLARED_CONSTRUCTORS);
         hints.reflection().registerType(OASISCatalogManager.class, MemberCategory.INVOKE_DECLARED_CONSTRUCTORS);
         hints.reflection().registerType(LoggingBusLifecycleListener.class, MemberCategory.INVOKE_DECLARED_CONSTRUCTORS);
+        hints.resources().registerResourceBundle("sun.security.util.Resources");
         hints.reflection().registerType(SimpleHelloEndpoint.class,
                 MemberCategory.DECLARED_FIELDS,
                 MemberCategory.INVOKE_DECLARED_CONSTRUCTORS,
