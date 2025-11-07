@@ -11,7 +11,9 @@ POST http://localhost:8080/services/hello
                 </soapenv:Envelope>
 
 ### Test X-Forwarded headers handling
-
 GET http://localhost:8080/services/hello?wsdl
 X-Forwarded-Host: test.learnwebservices.com
 X-Forwarded-Proto: https
+
+### Actuator
+GET http://localhost:8080/actuator/health
