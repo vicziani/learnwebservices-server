@@ -1,7 +1,6 @@
 package com.learnwebservices.services.hello;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
 import jakarta.annotation.Resource;
@@ -14,15 +13,14 @@ import java.util.Map;
 @Service
 @WebService(targetNamespace = "http://learnwebservices.com/services/hello",
         serviceName = "HelloEndpointService", portName = "HelloEndpointPort")
+@Slf4j
 public class SimpleHelloEndpoint implements HelloEndpoint {
-
-    private Logger logger = LoggerFactory.getLogger(this.getClass());
 
     @Resource
     private WebServiceContext context;
 
     public HelloResponse sayHello(HelloRequest request) {
-        logger.debug("HelloRequest from '{}' with name '{}'", getUserAgent(), request.getName());
+        log.debug("HelloRequest from '{}' with name '{}'", getUserAgent(), request.getName());
         return new HelloResponse(String.format("Hello %s!", request.getName()));
     }
 
