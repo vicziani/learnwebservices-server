@@ -20,7 +20,7 @@ public class SimpleHelloEndpoint implements HelloEndpoint {
     private WebServiceContext context;
 
     public HelloResponse sayHello(HelloRequest request) {
-        log.debug("HelloRequest from '{}' with name '{}'", getUserAgent(), request.getName());
+        log.debug("HelloRequest from '{}' with name '{}'", getUserAgent(), shorten(request.getName()));
         return new HelloResponse(String.format("Hello %s!", request.getName()));
     }
 
@@ -34,6 +34,17 @@ public class SimpleHelloEndpoint implements HelloEndpoint {
         else {
             return null;
         }
+    }
+
+    public static String shorten(String input) {
+        if (input == null) {
+            return "null";
+        }
+        int length = input.length();
+        if (length <= 20) {
+            return input;
+        }
+        return input.substring(0, 20) + "...(" + length + ")";
     }
 
 }
