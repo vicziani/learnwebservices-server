@@ -1,9 +1,9 @@
-FROM eclipse-temurin:17 AS builder
+FROM eclipse-temurin:21 AS builder
 WORKDIR /application
 COPY target/*.jar application.jar
 RUN java -Djarmode=layertools -jar application.jar extract
 
-FROM eclipse-temurin:17
+FROM eclipse-temurin:21
 WORKDIR /application
 COPY --from=builder application/dependencies/ ./
 COPY --from=builder application/spring-boot-loader/ ./
