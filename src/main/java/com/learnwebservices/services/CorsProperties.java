@@ -1,4 +1,4 @@
-package com.learnwebservices.services.hello;
+package com.learnwebservices.services;
 
 import lombok.Data;
 import org.springframework.boot.context.properties.ConfigurationProperties;

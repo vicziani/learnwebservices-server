@@ -1,7 +1,6 @@
 package com.learnwebservices;
 
-import com.learnwebservices.services.FaultInterceptor;
-import com.learnwebservices.services.hello.CorsProperties;
+import com.learnwebservices.services.CorsProperties;
 import com.learnwebservices.services.hello.HelloEndpoint;
 import lombok.AllArgsConstructor;
 import org.apache.cxf.Bus;
