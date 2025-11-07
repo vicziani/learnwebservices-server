@@ -47,24 +47,3 @@ jobs:
         tags: |
           ${{ secrets.DOCKER_HUB_USERNAME }}/lwsapp:latest
           ${{ secrets.DOCKER_HUB_USERNAME }}/lwsapp:${{ steps.get_version.outputs.version }}
-    - name: Configure AWS Credentials
-      uses: aws-actions/configure-aws-credentials@v1
-      with:
-        aws-access-key-id: ${{ secrets.ACCESS_KEY_ID }}
-        aws-secret-access-key: ${{ secrets.SECRET_ACCESS_KEY }}
-        aws-region: "eu-central-1"
-      if: ${{ false }}
-    - name: Upload package to S3 bucket
-      run: aws s3 cp target/lwsapp.jar s3://learnwebservices-deploy/lwsapp-${{ steps.get_version.outputs.version }}-${{github.run_number}}.jar
-      if: ${{ false }}
-    - name: Create new ElasticBeanstalk Application Version
-      run: |
-        aws elasticbeanstalk create-application-version \
-        --application-name learnwebservices \
-        --source-bundle S3Bucket="learnwebservices-deploy",S3Key="lwsapp-${{ steps.get_version.outputs.version }}-${{github.run_number}}.jar" \
-        --version-label "ver-${{ steps.get_version.outputs.version }}-${{github.run_number}}" \
-        --description "commit-sha-${{ github.sha }}"
-      if: ${{ false }}
-    - name: Deploy new ElasticBeanstalk Application Version
-      run: aws elasticbeanstalk update-environment --environment-name Learnwebservices-env --version-label "ver-${{ steps.get_version.outputs.version }}-${{github.run_number}}"
-      if: ${{ false }}
