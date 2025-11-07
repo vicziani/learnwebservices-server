@@ -15,7 +15,7 @@ import java.util.List;
 @Component
 public class GetHandlerFilter implements Filter {
 
-    private static final List<String> urls = List.of("hello", "tempconverter");
+    private static final List<String> urls = List.of("hello");
 
     @Override
     public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {

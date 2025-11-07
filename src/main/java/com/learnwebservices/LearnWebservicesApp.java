@@ -3,7 +3,6 @@ package com.learnwebservices;
 import com.learnwebservices.services.FaultInterceptor;
 import com.learnwebservices.services.hello.CorsProperties;
 import com.learnwebservices.services.hello.HelloEndpoint;
-import com.learnwebservices.services.tempconverter.TempConverterEndpoint;
 import lombok.AllArgsConstructor;
 import org.apache.cxf.Bus;
 import org.apache.cxf.ext.logging.LoggingFeature;
@@ -52,14 +51,6 @@ public class LearnWebservicesApp {
     public Endpoint endpoint(HelloEndpoint helloEndpoint) {
         EndpointImpl endpoint = new EndpointImpl(bus, helloEndpoint);
         endpoint.publish("/hello");
-        return endpoint;
-    }
-
-    @Bean
-    public Endpoint publishedTempConverterEndpoint(TempConverterEndpoint tempConverterEndpoint) {
-        EndpointImpl endpoint = new EndpointImpl(bus, tempConverterEndpoint);
-        endpoint.setOutFaultInterceptors(List.of(new FaultInterceptor()));
-        endpoint.publish("/tempconverter");
         return endpoint;
     }
 
