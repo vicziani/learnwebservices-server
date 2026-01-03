@@ -6,6 +6,8 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.http.MediaType;
 import org.springframework.test.web.reactive.server.WebTestClient;
 
+import java.nio.charset.StandardCharsets;
+
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 class HelloWebClientIT {
 
@@ -13,7 +15,8 @@ class HelloWebClientIT {
     WebTestClient webClient;
 
     @Test
-    void testHello() {
+    void hello() {
+        // language=XML
         String request = """
                 <soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:hel="http://learnwebservices.com/services/hello">
                    <soapenv:Header/>
@@ -25,6 +28,7 @@ class HelloWebClientIT {
                 </soapenv:Envelope>
                 """;
 
+        // language=XML
         String response = """
                 <soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
                    <soap:Body>
@@ -44,5 +48,27 @@ class HelloWebClientIT {
                 .exchange()
                 .expectStatus().isOk()
                 .expectBody().xml(response);
+    }
+
+    @Test
+    void services() {
+        webClient
+                .get()
+                .uri("/services")
+                .exchange()
+                .expectStatus().isOk()
+                .expectBody()
+                .consumeWith(result -> new String(result.getResponseBody(), StandardCharsets.UTF_8).contains("HelloEndpoint"));
+    }
+
+    @Test
+    void wsdl() {
+        webClient
+                .get()
+                .uri("/services/hello?wsdl")
+                .exchange()
+                .expectStatus().isOk()
+                .expectBody()
+                .xpath("definitions/service/@name").isEqualTo("HelloEndpointService");
     }
 }

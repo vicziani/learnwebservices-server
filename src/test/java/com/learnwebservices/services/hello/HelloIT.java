@@ -15,7 +15,7 @@ class HelloIT {
     int port;
 
     @Test
-    void testHello() {
+    void hello() {
         var proxyFactory = new JaxWsProxyFactoryBean();
         proxyFactory.setServiceClass(HelloEndpoint.class);
         proxyFactory.setAddress("http://localhost:" + port + "/services/hello");
