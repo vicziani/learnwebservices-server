@@ -1,5 +1,25 @@
 # Changelog
 
+## [4.0.0]
+
+- Remove temperature converter web service
+- GitHub Actions: Remove AWS deployment
+- GitHub Actions: Don't create version labelled image, only dev-latest
+- Move CorsProperties to the appropriate package
+- Remove Sematext support, remove logging remote IP
+- Use Lombok for logging
+- Update Java (21), Spring Boot (3.5.7), Maven (3.9.11), CXF version (4.1.3)
+- GitHub Actions: Bump actions versions, use Maven Wrapper, use Maven cache, format
+- Drop linux/arm/v7 architecture
+- Modernize deprecated Docker layer handling in Spring Boot
+- Healthcheck in Dockerfile
+- Fix jar file names and directories in Dockerfile
+- Native image, using native-image-agent
+- Log only shorten name
+- Set the name of the application, and the max. form post size.
+- New requests to http file
+- New test methods, and renamed test methods
+
 ## [3.0.1]
 
 - Use constructor injection in `LearnWebservicesApp`
